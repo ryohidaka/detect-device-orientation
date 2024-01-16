@@ -44,6 +44,29 @@ detectDeviceOrientation.init((orientation: Orientation) => {
 });
 ```
 
+In iOS Safari, requestPermission should be called through a user event, such as clicking a button.
+
+```typescript
+var btn = document.createElement("BUTTON");
+var text = document.createTextNode(
+  "Request Device Orientation Event Permission",
+);
+btn.appendChild(text);
+document.body.appendChild(btn);
+btn.addEventListener("click", function () {
+  detectDeviceOrientation.requestDeviceOrientationPermission;
+});
+```
+
+## Output
+
+| Property | Description                                                                                                                                                                                              | Type    | Example           |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------- |
+| absolute | A boolean that indicates whether or not the device is providing orientation data absolutely.                                                                                                             | boolean | `true` or `false` |
+| alpha    | A number representing the motion of the device around the z axis, express in degrees with values ranging from 0 (inclusive) to 360 (exclusive).                                                          | number  | `0`               |
+| beta     | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
+| gamma    | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
+
 ## Link
 
 - [DeviceOrientationEvent](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)
