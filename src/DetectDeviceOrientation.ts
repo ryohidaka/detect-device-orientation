@@ -1,4 +1,5 @@
 import { handleOrientationChange } from "./lib/handleOrientationChange";
+import { requestDeviceOrientationPermission } from "./lib/requestPermission";
 import { Orientation } from "./types";
 
 export class DetectDeviceOrientation {
@@ -63,5 +64,21 @@ export class DetectDeviceOrientation {
 
     const orientation = handleOrientationChange(event);
     this.onOrientationChange(orientation);
+  }
+
+  /**
+   * Requests permission for Device Orientation API.
+   * If the permission is granted, it allows the application to access device orientation data.
+   * @throws Will throw an error if the request for permission fails.
+   */
+  requestDeviceOrientationPermission() {
+    // Check if the browser supports the DeviceOrientationEvent API
+    if (
+      typeof (DeviceOrientationEvent as any).requestPermission === "function"
+    ) {
+      requestDeviceOrientationPermission(this.handleOrientationChange);
+    } else {
+      console.log("Browser does not support DeviceOrientationEvent API");
+    }
   }
 }
