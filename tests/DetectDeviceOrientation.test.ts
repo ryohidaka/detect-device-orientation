@@ -1,4 +1,5 @@
 import { DetectDeviceOrientation } from "../src/DetectDeviceOrientation";
+import { ExtendedDeviceOrientationEvent } from "../src/types";
 
 // Mock DeviceOrientationEvent
 global.DeviceOrientationEvent = jest.fn();
@@ -21,7 +22,8 @@ describe("DetectDeviceOrientation", () => {
       beta: 1,
       gamma: 1,
       absolute: true,
-    } as DeviceOrientationEvent;
+      webkitCompassHeading: 1,
+    } as ExtendedDeviceOrientationEvent;
 
     // Call the handleOrientationChange method
     detectDeviceOrientation.handleOrientationChange(mockEvent);
@@ -32,6 +34,7 @@ describe("DetectDeviceOrientation", () => {
       alpha: 1,
       beta: 1,
       gamma: 1,
+      webkitCompassHeading: 1,
     });
   });
 });

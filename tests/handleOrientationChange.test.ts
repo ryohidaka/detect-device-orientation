@@ -1,4 +1,5 @@
 import { handleOrientationChange } from "../src/lib/handleOrientationChange";
+import { ExtendedDeviceOrientationEvent } from "../src/types";
 
 describe("handleOrientationChange", () => {
   test("should return an Orientation object", () => {
@@ -7,15 +8,19 @@ describe("handleOrientationChange", () => {
       alpha: 90,
       beta: 45,
       gamma: 30,
+      webkitCompassHeading: 10,
     };
 
-    const result = handleOrientationChange(mockEvent as DeviceOrientationEvent);
+    const result = handleOrientationChange(
+      mockEvent as ExtendedDeviceOrientationEvent,
+    );
 
     expect(result).toEqual({
       absolute: true,
       alpha: 90,
       beta: 45,
       gamma: 30,
+      webkitCompassHeading: 10,
     });
   });
 
@@ -24,15 +29,19 @@ describe("handleOrientationChange", () => {
       alpha: 90,
       beta: 45,
       gamma: 30,
+      webkitCompassHeading: 10,
     };
 
-    const result = handleOrientationChange(mockEvent as DeviceOrientationEvent);
+    const result = handleOrientationChange(
+      mockEvent as ExtendedDeviceOrientationEvent,
+    );
 
     expect(result).toEqual({
       absolute: false,
       alpha: 90,
       beta: 45,
       gamma: 30,
+      webkitCompassHeading: 10,
     });
   });
 });

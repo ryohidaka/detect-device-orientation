@@ -1,18 +1,19 @@
-import { Orientation } from "../types";
+import { ExtendedDeviceOrientationEvent, Orientation } from "../types";
 
 /**
- * Handles the orientation change event.
+ * Handles the device orientation change event.
  *
- * @param event - The DeviceOrientationEvent containing alpha, beta, and gamma values.
- * @returns An object representing the orientation with absolute, alpha, beta, gamma properties.
+ * @param event - The DeviceOrientationEvent containing alpha, beta, gamma, and webkitCompassHeading values.
+ * @returns An object representing the orientation with absolute, alpha, beta, gamma, and webkitCompassHeading properties.
  */
 export function handleOrientationChange(
-  event: DeviceOrientationEvent,
+  event: ExtendedDeviceOrientationEvent,
 ): Orientation {
   return {
     absolute: event.absolute || false,
     alpha: event.alpha as number,
     beta: event.beta as number,
     gamma: event.gamma as number,
+    webkitCompassHeading: event.webkitCompassHeading,
   };
 }
