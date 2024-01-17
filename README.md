@@ -41,6 +41,12 @@ detectDeviceOrientation.init((orientation: Orientation) => {
 
   console.log(`gamma: ${orientation.gamma}`);
   // [Output] gamma: 0
+
+  console.log(`webkitCompassHeading: ${orientation.webkitCompassHeading}`);
+  // [Output] webkitCompassHeading: 0
+
+  console.log(`webkitCompassAccuracy: ${orientation.webkitCompassAccuracy}`);
+  // [Output] webkitCompassHeading: 0
 });
 ```
 
@@ -60,12 +66,14 @@ btn.addEventListener("click", function () {
 
 ## Output
 
-| Property | Description                                                                                                                                                                                              | Type    | Example           |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------- |
-| absolute | A boolean that indicates whether or not the device is providing orientation data absolutely.                                                                                                             | boolean | `true` or `false` |
-| alpha    | A number representing the motion of the device around the z axis, express in degrees with values ranging from 0 (inclusive) to 360 (exclusive).                                                          | number  | `0`               |
-| beta     | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
-| gamma    | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
+| Property              | Description                                                                                                                                                                                              | Type    | Example           |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------- |
+| absolute              | A boolean that indicates whether or not the device is providing orientation data absolutely.                                                                                                             | boolean | `true` or `false` |
+| alpha                 | A number representing the motion of the device around the z axis, express in degrees with values ranging from 0 (inclusive) to 360 (exclusive).                                                          | number  | `0`               |
+| beta                  | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
+| gamma                 | A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device. | number  | `0`               |
+| webkitCompassHeading  | A number represents the difference between the motion of the device around the z axis of the world system and the direction of the north, express in degrees with values ranging from 0 to 360.          | number  | `0`               |
+| webkitCompassAccuracy | The accuracy of the compass means that the deviation is positive or negative. It's usually 10.                                                                                                           | number  | `0`               |
 
 ## Link
 
