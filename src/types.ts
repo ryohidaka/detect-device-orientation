@@ -4,8 +4,10 @@ export type Orientation = {
   beta: number;
   gamma: number;
   webkitCompassHeading?: number;
+  webkitCompassAccuracy?: number;
 };
 
 export type ExtendedDeviceOrientationEvent = DeviceOrientationEvent & {
   webkitCompassHeading?: number;
+  webkitCompassAccuracy?: number;
 };

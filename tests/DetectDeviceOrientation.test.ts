@@ -23,6 +23,7 @@ describe("DetectDeviceOrientation", () => {
       gamma: 1,
       absolute: true,
       webkitCompassHeading: 1,
+      webkitCompassAccuracy: 1,
     } as ExtendedDeviceOrientationEvent;
 
     // Call the handleOrientationChange method
@@ -35,6 +36,7 @@ describe("DetectDeviceOrientation", () => {
       beta: 1,
       gamma: 1,
       webkitCompassHeading: 1,
+      webkitCompassAccuracy: 1,
     });
   });
 });

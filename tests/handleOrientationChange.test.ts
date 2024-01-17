@@ -9,6 +9,7 @@ describe("handleOrientationChange", () => {
       beta: 45,
       gamma: 30,
       webkitCompassHeading: 10,
+      webkitCompassAccuracy: 20,
     };
 
     const result = handleOrientationChange(
@@ -21,6 +22,7 @@ describe("handleOrientationChange", () => {
       beta: 45,
       gamma: 30,
       webkitCompassHeading: 10,
+      webkitCompassAccuracy: 20,
     });
   });
 
@@ -30,6 +32,7 @@ describe("handleOrientationChange", () => {
       beta: 45,
       gamma: 30,
       webkitCompassHeading: 10,
+      webkitCompassAccuracy: 20,
     };
 
     const result = handleOrientationChange(
@@ -42,6 +45,7 @@ describe("handleOrientationChange", () => {
       beta: 45,
       gamma: 30,
       webkitCompassHeading: 10,
+      webkitCompassAccuracy: 20,
     });
   });
 });
