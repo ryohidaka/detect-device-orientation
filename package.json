@@ -1,6 +1,6 @@
 {
   "name": "detect-device-orientation",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Detect device orientation.",
   "keywords": [
     "device",
