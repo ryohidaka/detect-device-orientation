@@ -1,3 +1,9 @@
+> [!CAUTION]
+> This repository has been archived.
+> Please use the following repository instead, which provides similar functionality:
+>
+> [compass-ts](https://github.com/ryohidaka/compass-ts)
+
 # detect-device-orientation
 
 [![npm version](https://badge.fury.io/js/detect-device-orientation.svg)](https://badge.fury.io/js/detect-device-orientation)
